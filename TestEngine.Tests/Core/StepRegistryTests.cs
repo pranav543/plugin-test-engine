@@ -52,7 +52,7 @@ public class StepRegistryTests
     [Fact]
     public void Create_ReturnsNull_ForUnknownType()
     {
-        var step = _registry.Create("FrequencyCheck");
+        var step = _registry.Create("SomeUnknownStep");
 
         step.Should().BeNull();
     }
@@ -87,7 +87,7 @@ public class StepRegistryTests
     [Fact]
     public void IsRegistered_ReturnsFalse_ForUnknownType()
     {
-        _registry.IsRegistered("FrequencyCheck").Should().BeFalse();
+        _registry.IsRegistered("SomeUnknownStep").Should().BeFalse();
     }
 
     // ── RegisteredStepNames ───────────────────────────────────────────────────
