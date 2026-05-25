@@ -1,0 +1,44 @@
+{
+  "name": "SEL-400 Quick Smoke Test",
+  "targetModel": "SEL-400",
+  "version": "1.0",
+  "steps": [
+    {
+      "type": "LogMessage",
+      "parameters": {
+        "message": "=== SEL-400 Quick Smoke Test ===",
+        "level": "section"
+      }
+    },
+    {
+      "type": "TimeDelay",
+      "parameters": {
+        "milliseconds": "250",
+        "reason": "Power-on stabilization"
+      }
+    },
+    {
+      "type": "VoltageCheck",
+      "parameters": {
+        "expected": "24.0",
+        "tolerance": "0.5",
+        "channel": "primary"
+      }
+    },
+    {
+      "type": "CurrentCheck",
+      "parameters": {
+        "expected": "2.0",
+        "tolerance": "0.1",
+        "rail": "main"
+      }
+    },
+    {
+      "type": "IsolationCheck",
+      "parameters": {
+        "minResistance": "1800",
+        "testVoltage": "500"
+      }
+    }
+  ]
+}

@@ -9,6 +9,12 @@
     <PackageReference Include="System.Text.Json" Version="10.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+  <Content Include="scripts\**\*">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </Content>
+</ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>

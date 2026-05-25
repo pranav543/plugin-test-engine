@@ -1,0 +1,109 @@
+{
+  "name": "SEL-300G Full Functional Test",
+  "targetModel": "SEL-300G",
+  "version": "2.1",
+  "steps": [
+    {
+      "type": "LogMessage",
+      "parameters": {
+        "message": "=== SEL-300G Full Functional Test Starting ===",
+        "level": "section"
+      }
+    },
+    {
+      "type": "LogMessage",
+      "parameters": {
+        "message": "Step 1 of 4: Power-on and stabilization",
+        "level": "info"
+      }
+    },
+    {
+      "type": "TimeDelay",
+      "parameters": {
+        "milliseconds": "500",
+        "reason": "Allow capacitors to charge after power-on"
+      }
+    },
+    {
+      "type": "LogMessage",
+      "parameters": {
+        "message": "Step 2 of 4: Voltage rail checks",
+        "level": "info"
+      }
+    },
+    {
+      "type": "VoltageCheck",
+      "parameters": {
+        "expected": "24.0",
+        "tolerance": "0.5",
+        "channel": "primary 24V rail"
+      }
+    },
+    {
+      "type": "VoltageCheck",
+      "parameters": {
+        "expected": "12.0",
+        "tolerance": "0.3",
+        "channel": "secondary 12V rail"
+      }
+    },
+    {
+      "type": "VoltageCheck",
+      "parameters": {
+        "expected": "5.0",
+        "tolerance": "0.15",
+        "channel": "logic 5V rail"
+      }
+    },
+    {
+      "type": "LogMessage",
+      "parameters": {
+        "message": "Step 3 of 4: Current draw verification",
+        "level": "info"
+      }
+    },
+    {
+      "type": "CurrentCheck",
+      "parameters": {
+        "expected": "1.5",
+        "tolerance": "0.05",
+        "rail": "main 24V"
+      }
+    },
+    {
+      "type": "LogMessage",
+      "parameters": {
+        "message": "Step 4 of 4: Isolation and continuity",
+        "level": "info"
+      }
+    },
+    {
+      "type": "IsolationCheck",
+      "parameters": {
+        "minResistance": "2000",
+        "testVoltage": "500"
+      }
+    },
+    {
+      "type": "ContinuityCheck",
+      "parameters": {
+        "maxResistance": "1.0",
+        "node": "J1"
+      }
+    },
+    {
+      "type": "ContinuityCheck",
+      "parameters": {
+        "maxResistance": "1.0",
+        "node": "J2"
+      }
+    },
+    {
+      "type": "LogMessage",
+      "parameters": {
+        "message": "=== Full Functional Test Complete ===",
+        "level": "section"
+      }
+    }
+  ]
+}
