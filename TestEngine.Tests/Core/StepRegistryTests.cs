@@ -102,6 +102,7 @@ public class StepRegistryTests
              .And.Contain("CurrentCheck")
              .And.Contain("TimeDelay")
              .And.Contain("LogMessage");
+             
     }
 
     [Fact]

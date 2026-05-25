@@ -28,6 +28,7 @@ public class StepRegistry
             ["CurrentCheck"]    = () => new CurrentCheckStep(),
             ["TimeDelay"]       = () => new TimeDelayStep(),
             ["LogMessage"]      = () => new LogMessageStep(),
+            ["FrequencyCheck"]  = () => new FrequencyCheckStep(),
         };
     }
 
