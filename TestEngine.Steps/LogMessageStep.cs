@@ -30,7 +30,7 @@ public class LogMessageStep : ITestStep
             message = message.Replace($"{{{key}}}", value);
 
         return Task.FromResult(StepResult.Pass(StepName,
-            Description: $"[{level.ToUpper()}] {message}",
+            description: $"[{level.ToUpper()}] {message}",
             message: message));
     }
 }

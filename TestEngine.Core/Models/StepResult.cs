@@ -4,7 +4,7 @@ namespace TestEngine.Core.Models;
 /// The outcome of a single test step execution.
 /// Collected by the runner and printed in the final report.
 /// </summary>
-public class StepResult
+public record StepResult
 {
     public string StepName    { get; init; } = string.Empty;
     public string Description { get; init; } = string.Empty;
